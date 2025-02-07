@@ -1,0 +1,18 @@
+.{
+    .name = "zlshm",
+
+    .version = "0.0.1",
+
+    .dependencies = .{
+        .zigwin32 = .{
+            .url = "https://github.com/marlersoft/zigwin32/archive/e8739b32a33ce48a3286aba31918b26a9dfc6ef0.tar.gz",
+            .hash = "1220219ca4acfa5804ca39945f92554e93507b077c03605b7a4c1c0401f0c7121339",
+        },
+    },
+
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+    },
+}
