@@ -11,13 +11,34 @@ with Deno's _ffi_ functionality, but can be used with any language that supports
 
 ## Symbols
 
-The library exports a single function, `read`, which takes three arguments:
+### `open`
 
-1. A UTF-8 encoded string containing the path/name/key of the shared memory file.
+Opens a shared memory file. Returns a windows `HANDLE` to the file.
 
-2. A pointer to a buffer to read the data into.
+| Argument | Type   | Description                                 |
+| -------- | ------ | ------------------------------------------- |
+| name     | string | The name of the shared memory file to open. |
+| log_err  | bool   | Whether to log errors to stderr.            |
 
-3. The number of bytes to read. This must be less than or equal to the length of the read-buffer.
+### `close`
+
+Closes a shared memory file. Returns the return code of `CloseHandle`.
+
+| Argument | Type     | Description                                      |
+| -------- | -------- | ------------------------------------------------ |
+| handle   | `HANDLE` | The `HANDLE` of the shared memory file to close. |
+
+### `read`
+
+Reads data from a shared memory file. Returns -1 if `MapViewOfFile` fails,
+otherwise the return code of `UnmapViewOfFile`.
+
+| Argument | Type     | Description                                                                         |
+| -------- | -------- | ----------------------------------------------------------------------------------- |
+| handle   | `HANDLE` | The `HANDLE` of the shared memory file to read from.                                |
+| buf      | pointer  | The buffer to read the data into.                                                   |
+| len      | usize    | The number of bytes to map. Must be less than or equal to the length of the buffer. |
+| log_err  | bool     | Whether to log errors to stderr.                                                    |
 
 ## Building
 
