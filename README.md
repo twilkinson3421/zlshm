@@ -15,10 +15,10 @@ with Deno's _ffi_ functionality, but can be used with any language that supports
 
 Opens a shared memory file. Returns a windows `HANDLE` to the file.
 
-| Argument | Type   | Description                                 |
-| -------- | ------ | ------------------------------------------- |
-| name     | string | The name of the shared memory file to open. |
-| log_err  | bool   | Whether to log errors to stderr.            |
+| Argument | Type   | Description                                                                        |
+| -------- | ------ | ---------------------------------------------------------------------------------- |
+| name     | string | The name of the shared memory file to open. This must be null-terminated UTF-16LE. |
+| log_err  | bool   | Whether to log errors to stderr.                                                   |
 
 ### `close`
 
