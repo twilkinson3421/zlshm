@@ -45,7 +45,3 @@ otherwise the return code of `UnmapViewOfFile`.
 This library is written and built using Zig version _0.14.0-dev.2577+271452d22_ (_2024.11.0-mach_).
 Run `zig build` to build the library locally (requires Zig to be installed). If you are not using Windows,
 you should add `-Dtarget=x86_64-windows` to the build command (Obviously you will require Windows to use the library).
-
-## License
-
-This library is licensed under the Unlicense (Hooray!). See the `UNLICENSE` file for more information.
